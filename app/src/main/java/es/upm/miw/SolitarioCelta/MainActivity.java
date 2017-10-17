@@ -1,13 +1,18 @@
 package es.upm.miw.SolitarioCelta;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 public class MainActivity extends Activity {
 
@@ -95,8 +100,9 @@ public class MainActivity extends Activity {
             case R.id.opcAcercaDe:
                 startActivity(new Intent(this, AcercaDe.class));
                 return true;
-
-            // TODO!!! resto opciones
+            case R.id.opcReiniciarPartida:
+                new AlertDialogRestartFragment().show(getFragmentManager(), "ALERT_DIALOG");
+                return true;
 
             default:
                 Toast.makeText(
